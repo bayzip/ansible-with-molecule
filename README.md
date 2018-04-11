@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Role Name
 =========
 
@@ -36,3 +37,7 @@ Author Information
 ------------------
 
 An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+=======
+# ansible-with-molecule
+Ansible + molecule with Ruby+RVM+NGINX+Postgresql
+>>>>>>> 30aed2ab1e15ac470ed483f36d1f09078bf06000
