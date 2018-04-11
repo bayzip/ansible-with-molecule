@@ -1,0 +1,29 @@
+---
+converged: true
+created: true
+default_platform: null
+default_provider: null
+driver: vagrant
+driver_config:
+  current_platform: debian/stretch64
+  current_provider: virtualbox
+  instances:
+  - ansible_groups:
+    - development
+    name: sinaurails-ansible
+    vm_name: sinaurails-ansible
+  platforms:
+  - box: debian/stretch64
+    box_url: https://app.vagrantup.com/debian/boxes/stretch64/versions/9.1.0/providers/virtualbox.box
+    name: debian/stretch64
+  providers:
+  - name: virtualbox
+    options:
+      cpus: 2
+      memory: 512
+    type: virtualbox
+hosts:
+  sinaurails-ansible:
+    groups:
+    - development
+multiple_platforms: null

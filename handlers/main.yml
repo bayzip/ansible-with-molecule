@@ -1,0 +1,12 @@
+---
+# handlers file for nginx
+  - name: restart nginx
+    service: 
+      name=nginx 
+      state=restarted
+
+  - name: Restart Postgresql
+    service:
+      name=postgresql
+      state=restarted
+      

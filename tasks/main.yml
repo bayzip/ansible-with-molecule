@@ -1,0 +1,38 @@
+---
+# tasks file for nginx
+- name: install packages
+  apt: name={{ item }} update_cache=yes force=yes
+  with_items:
+    - nginx
+    - curl
+    - net-tools
+  become: yes
+  notify:
+    - restart nginx
+
+- name: Install postgresql
+  apt:
+    name: postgresql
+    state: latest
+
+- name: Install Nodejs
+  apt:
+    name: nodejs
+    state: present
+
+- name: Install Python
+  apt:
+    name: python
+    state: present    
+
+- name: Install GPG
+  command: "gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB"
+
+- name: Install RVM
+  shell: "curl -sSL https://get.rvm.io | bash -s stable --ruby"
+
+- name: install deps for postgresql
+  apt: name={{ item }} update_cache=yes force=yes
+  with_items:
+    - dirmngr
+  become: true
